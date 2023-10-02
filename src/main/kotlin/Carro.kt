@@ -5,13 +5,19 @@ class Carro constructor(private val motor: Motor){
 
     fun andar(){
 
-        if(motor.estaLigado() && motor.temCombustivel()){
-            println("Vrum, vrum...")
-            motor.gastandoCombustivel()
-        } else if(!motor.temCombustivel()){
-            println("O motor não tem combustível")
-        } else {
-            println("O motor está desligado")
+		when {
+            !motor.estaLigado() -> println("Ligue o carro primeiro!")
+            !motor.temAutonomia() -> println("Coloque o combustível primeiro!")
+            else -> {
+                motor.gastar()
+                println("Carro andando...")
+            }
+        }
+
+        /* O "is" verifica o tipo da superclasse. */
+        when(motor){
+            is MotorCombustao -> println("Combustão")
+            is MotorEletrico -> println("Elétrico")
         }
     }
 

@@ -1,12 +1,16 @@
 fun main(){
 
-    val motor = Motor()
-    val carro = Carro(motor)
-    motor.desligar()
-    motor.estaLigado()
-    motor.ligar()
-    motor.estaLigado()
+    val motorCombustao = MotorCombustao()
+    val carro = Carro(motorCombustao)
+    motorCombustao.desligar()
+    motorCombustao.estaLigado()
+    motorCombustao.ligar()
+    motorCombustao.estaLigado()
 
 
     carro.andar()
+
+    val tesla = Carro(motorCombustao)
+    tesla.partida()
+    tesla.andar()
 }

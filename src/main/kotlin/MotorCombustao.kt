@@ -1,6 +1,5 @@
-class Motor {
+class MotorCombustao: Motor() {
 
-    private var ligado: Boolean = false
     private var nivelCombustivel: Int = 2;
 
     fun ligar() {
@@ -16,11 +15,11 @@ class Motor {
         return this.ligado
     }
 
-    fun temCombustivel(): Boolean {
+    override fun temAutonomia(): Boolean {
         return this.nivelCombustivel > 0
     }
 
-    fun gastandoCombustivel(){
-        this.nivelCombustivel - 1
+    override fun gastando() {
+		this.nivelCombustivel - 1
     }
 }
