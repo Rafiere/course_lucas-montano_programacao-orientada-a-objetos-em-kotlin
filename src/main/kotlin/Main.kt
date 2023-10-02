@@ -1,23 +1,12 @@
 fun main(){
 
-    //Variável de leitura
-    val name: String = "Rafael"
+    val motor = Motor()
+    val carro = Carro(motor)
+    motor.desligar()
+    motor.estaLigado()
+    motor.ligar()
+    motor.estaLigado()
 
 
-    //Variável de escrita
-    var idade: Int?
-    idade = 32
-
-    println("Hello, $name, $idade")
-
-    val rafa = Human()
-    rafa.name = "Teste"
-
-    val dog = Dog(rafa);
-    dog.name = "Linux";
-
-    println(dog.name)
-
-    /* Quando uma função não tem um retorno, ela retorna um Unit. */
-	dog.sayHi("Olá!")
+    carro.andar()
 }
